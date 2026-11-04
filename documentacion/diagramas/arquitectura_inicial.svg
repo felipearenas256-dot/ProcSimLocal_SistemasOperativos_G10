@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="930" viewBox="0 0 1200 930" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Diagrama de arquitectura inicial</title>
+<defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a93a6"/></marker></defs>
+<rect width="1200" height="930" fill="#ffffff"/>
+<text x="40" y="42" font-size="22" fill="#1f2430" font-weight="bold" text-anchor="start">Diagrama de arquitectura inicial</text>
+<text x="40" y="66" font-size="13" fill="#5b6475" font-weight="normal" text-anchor="start">Patrón Modelo-Vista-Controlador · aplicación de escritorio local</text>
+<text x="40" y="112" font-size="12" fill="#5b6475" font-weight="bold" text-anchor="start">USUARIOS</text>
+<rect x="40" y="124" width="220" height="72" rx="8" fill="#e8effd" stroke="#2563eb" stroke-width="1.5"/>
+<text x="56" y="154" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">Estudiante</text>
+<text x="56" y="176" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">Ejecuta escenarios y observa resultados</text>
+<rect x="40" y="216" width="220" height="72" rx="8" fill="#f1eafd" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="56" y="246" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">Docente</text>
+<text x="56" y="268" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">Proyecta ejemplos en clase</text>
+<polyline points="260,160 298,160" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<polyline points="260,252 280,252 280,160" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="300" y="96" width="860" height="100" rx="10" fill="#e8effd" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="122" font-size="13" fill="#2563eb" font-weight="bold" text-anchor="start">VISTA · Tkinter + Canvas</text>
+<text x="1140" y="122" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="end" font-family="Consolas, Menlo, monospace">src/ui/</text>
+<rect x="320.0" y="136" width="156.0" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-opacity=".45"/>
+<text x="398.0" y="161" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Menú de escenarios</text>
+<rect x="486.0" y="136" width="156.0" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-opacity=".45"/>
+<text x="564.0" y="161" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Formularios de parámetros</text>
+<rect x="652.0" y="136" width="156.0" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-opacity=".45"/>
+<text x="730.0" y="161" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Lienzo de animación</text>
+<rect x="818.0" y="136" width="156.0" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-opacity=".45"/>
+<text x="896.0" y="161" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Panel PCB</text>
+<rect x="984.0" y="136" width="156.0" height="40" rx="6" fill="#fff" stroke="#2563eb" stroke-opacity=".45"/>
+<text x="1062.0" y="161" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Panel de bitácora</text>
+<polyline points="640,198 640,236" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<polyline points="820,236 820,198" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="630" y="222" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="end">acciones del usuario</text>
+<text x="830" y="222" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">estado actualizado</text>
+<rect x="300" y="238" width="860" height="100" rx="10" fill="#fdf4e3" stroke="#b7791f" stroke-width="2"/>
+<text x="320" y="264" font-size="13" fill="#b7791f" font-weight="bold" text-anchor="start">CONTROLADOR</text>
+<text x="1140" y="264" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="end" font-family="Consolas, Menlo, monospace">src/controlador.py</text>
+<rect x="320.0" y="278" width="197.5" height="40" rx="6" fill="#fff" stroke="#b7791f" stroke-opacity=".45"/>
+<text x="418.75" y="303" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Valida los datos</text>
+<rect x="527.5" y="278" width="197.5" height="40" rx="6" fill="#fff" stroke="#b7791f" stroke-opacity=".45"/>
+<text x="626.25" y="303" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Inicia, pausa o reinicia</text>
+<rect x="735.0" y="278" width="197.5" height="40" rx="6" fill="#fff" stroke="#b7791f" stroke-opacity=".45"/>
+<text x="833.75" y="303" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Controla el reloj de simulación</text>
+<rect x="942.5" y="278" width="197.5" height="40" rx="6" fill="#fff" stroke="#b7791f" stroke-opacity=".45"/>
+<text x="1041.25" y="303" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="middle">Envía cambios a la vista</text>
+<polyline points="640,340 640,378" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<polyline points="820,378 820,340" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="630" y="364" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="end">órdenes</text>
+<text x="830" y="364" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">eventos y resultados</text>
+<rect x="300" y="380" width="860" height="172" rx="10" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="320" y="406" font-size="13" fill="#1f9d55" font-weight="bold" text-anchor="start">MODELO · MOTOR DE SIMULACIÓN</text>
+<text x="1140" y="406" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="end" font-family="Consolas, Menlo, monospace">src/nucleo/</text>
+<rect x="320.0" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="330.0" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Procesos</text>
+<text x="330.0" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">proceso.py</text>
+<text x="330.0" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">pcb.py</text>
+<rect x="458.3" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="468.33333333333337" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Estados</text>
+<text x="468.33333333333337" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">reglas de</text>
+<text x="468.33333333333337" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">transición</text>
+<rect x="596.7" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="606.6666666666667" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Hilos</text>
+<text x="606.6666666666667" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">hilos.py</text>
+<text x="606.6666666666667" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">threading.Thread</text>
+<rect x="735.0" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="745.0" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Sincronización</text>
+<text x="745.0" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">Lock</text>
+<text x="745.0" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">Semaphore</text>
+<rect x="873.3" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="883.3333333333334" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Escenarios</text>
+<text x="883.3333333333334" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">escenarios.py</text>
+<text x="883.3333333333334" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">F1 … F9</text>
+<rect x="1011.7" y="420" width="128.3" height="64" rx="6" fill="#fff" stroke="#1f9d55" stroke-opacity=".45"/>
+<text x="1021.6666666666667" y="442" font-size="12.5" fill="#1f2430" font-weight="bold" text-anchor="start">Modos y llamadas</text>
+<text x="1021.6666666666667" y="460" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">usuario / kernel</text>
+<text x="1021.6666666666667" y="475" font-size="10.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">interrupciones</text>
+<rect x="320" y="496" width="820" height="40" rx="6" fill="#fff" stroke="#7c3aed"/>
+<text x="336" y="521" font-size="13" fill="#7c3aed" font-weight="bold" text-anchor="start">Registro de eventos</text>
+<text x="476" y="521" font-size="12" fill="#1f2430" font-weight="normal" text-anchor="start">registro.py · recibe cada cambio del motor y lo envía a la bitácora, a la base de datos y al .txt</text>
+<polyline points="520,552 520,616" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<polyline points="940,552 940,616" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="530" y="590" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">base_datos.py (sqlite3)</text>
+<text x="950" y="590" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">exportar</text>
+<rect x="300" y="618" width="420" height="92" rx="10" fill="#f1eafd" stroke="#7c3aed" stroke-width="2"/>
+<text x="320" y="646" font-size="12.5" fill="#7c3aed" font-weight="bold" text-anchor="start">PERSISTENCIA · BASE DE DATOS LOCAL</text>
+<text x="320" y="672" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">SQLite · procsim.db</text>
+<text x="320" y="694" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">7 tablas: escenario, ejecucion, proceso, hilo, recurso, asignacion, evento</text>
+<rect x="740" y="618" width="420" height="92" rx="10" fill="#f3f4f7" stroke="#4a5568" stroke-width="2"/>
+<text x="760" y="646" font-size="12.5" fill="#4a5568" font-weight="bold" text-anchor="start">SALIDA A ARCHIVO</text>
+<text x="760" y="672" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start" font-family="Consolas, Menlo, monospace">bitacora_AAAAMMDD.txt</text>
+<text x="760" y="694" font-size="11" fill="#5b6475" font-weight="normal" text-anchor="start">eventos de la ejecución en texto plano</text>
+<rect x="40" y="740" width="1120" height="150" rx="10" fill="#f3f4f7" stroke="#4a5568" stroke-width="2"/>
+<text x="60" y="768" font-size="12.5" fill="#4a5568" font-weight="bold" text-anchor="start">ENTORNO DE EJECUCIÓN</text>
+<rect x="60" y="784" width="260" height="84" rx="6" fill="#fff" stroke="#8a93a6"/>
+<text x="74" y="812" font-size="11.5" fill="#5b6475" font-weight="bold" text-anchor="start">Sistema operativo</text>
+<text x="74" y="838" font-size="12.5" fill="#1f2430" font-weight="normal" text-anchor="start">Windows 10 / 11 (64 bits)</text>
+<rect x="335" y="784" width="260" height="84" rx="6" fill="#fff" stroke="#8a93a6"/>
+<text x="349" y="812" font-size="11.5" fill="#5b6475" font-weight="bold" text-anchor="start">Ejecución</text>
+<text x="349" y="838" font-size="12.5" fill="#1f2430" font-weight="normal" text-anchor="start">Python 3.12 o ejecutable .exe</text>
+<rect x="610" y="784" width="260" height="84" rx="6" fill="#fff" stroke="#8a93a6"/>
+<text x="624" y="812" font-size="11.5" fill="#5b6475" font-weight="bold" text-anchor="start">Hilos del SO</text>
+<text x="624" y="838" font-size="12.5" fill="#1f2430" font-weight="normal" text-anchor="start">threading → hilos nativos de Windows</text>
+<rect x="885" y="784" width="260" height="84" rx="6" fill="#fff" stroke="#8a93a6"/>
+<text x="899" y="812" font-size="11.5" fill="#5b6475" font-weight="bold" text-anchor="start">Red</text>
+<text x="899" y="838" font-size="12.5" fill="#1f2430" font-weight="normal" text-anchor="start">sin internet · sin servidor</text>
+<text x="40" y="918" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">Los usuarios solo interactúan con la Vista. El Modelo no conoce la Vista: el Controlador los comunica.</text>
+</svg>

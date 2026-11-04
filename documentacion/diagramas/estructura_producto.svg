@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Diagrama de estructura del producto</title>
+<defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a93a6"/></marker></defs>
+<rect width="1200" height="720" fill="#ffffff"/>
+<text x="40" y="42" font-size="22" fill="#1f2430" font-weight="bold" text-anchor="start">Diagrama de estructura del producto</text>
+<text x="40" y="66" font-size="13" fill="#5b6475" font-weight="normal" text-anchor="start">ProcSim Local · Grupo 10 · módulos funcionales y componentes</text>
+<rect x="450" y="90" width="300" height="62" rx="10" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="600" y="118" font-size="19" fill="#1f2430" font-weight="bold" text-anchor="middle">ProcSim Local</text>
+<text x="600" y="140" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="middle">Simulador de procesos, hilos y concurrencia</text>
+<polyline points="600,152 600,175" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<polyline points="220,175 980,175" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<polyline points="220,175 220,195" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<rect x="40" y="197" width="360" height="64" rx="10" fill="#e8effd" stroke="#2563eb" stroke-width="2"/>
+<text x="56" y="224" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">Módulo A · Gestión de procesos</text>
+<text x="56" y="246" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">Cómo nace, vive y termina un proceso</text>
+<polyline points="54,316 70,316" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="70" y="290" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="80" y="304" width="30" height="22" rx="4" fill="#fff" stroke="#2563eb"/>
+<text x="95" y="320" font-size="12" fill="#2563eb" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F1</text>
+<text x="120" y="313" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Crear y finalizar procesos</text>
+<text x="120" y="332" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Lista de procesos activos</text>
+<polyline points="54,380 70,380" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="70" y="354" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="80" y="368" width="30" height="22" rx="4" fill="#fff" stroke="#2563eb"/>
+<text x="95" y="384" font-size="12" fill="#2563eb" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F2</text>
+<text x="120" y="377" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Consultar el PCB</text>
+<text x="120" y="396" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Ficha PCB en vivo</text>
+<polyline points="54,444 70,444" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="70" y="418" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="80" y="432" width="30" height="22" rx="4" fill="#fff" stroke="#2563eb"/>
+<text x="95" y="448" font-size="12" fill="#2563eb" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F3</text>
+<text x="120" y="441" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Ciclo de vida</text>
+<text x="120" y="460" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Diagrama de estados animado</text>
+<polyline points="54,261 54,444" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<polyline points="600,175 600,195" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<rect x="420" y="197" width="360" height="64" rx="10" fill="#f1eafd" stroke="#7c3aed" stroke-width="2"/>
+<text x="436" y="224" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">Módulo B · Hilos y modos de ejecución</text>
+<text x="436" y="246" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">Qué comparte un proceso con sus hilos</text>
+<polyline points="434,316 450,316" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="450" y="290" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="460" y="304" width="30" height="22" rx="4" fill="#fff" stroke="#7c3aed"/>
+<text x="475" y="320" font-size="12" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F4</text>
+<text x="500" y="313" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Hilos de un proceso</text>
+<text x="500" y="332" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Línea de tiempo por hilo</text>
+<polyline points="434,380 450,380" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="450" y="354" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="460" y="368" width="30" height="22" rx="4" fill="#fff" stroke="#7c3aed"/>
+<text x="475" y="384" font-size="12" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F5</text>
+<text x="500" y="377" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Modo usuario ↔ modo kernel</text>
+<text x="500" y="396" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Secuencia de pasos explicada</text>
+<polyline points="434,261 434,380" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<polyline points="980,175 980,195" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<rect x="800" y="197" width="360" height="64" rx="10" fill="#fdecec" stroke="#c53030" stroke-width="2"/>
+<text x="816" y="224" font-size="15" fill="#1f2430" font-weight="bold" text-anchor="start">Módulo C · Concurrencia</text>
+<text x="816" y="246" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">Qué falla al compartir recursos</text>
+<polyline points="814,316 830,316" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="830" y="290" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="840" y="304" width="30" height="22" rx="4" fill="#fff" stroke="#c53030"/>
+<text x="855" y="320" font-size="12" fill="#c53030" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F6</text>
+<text x="880" y="313" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Condición de carrera</text>
+<text x="880" y="332" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Valor esperado vs. real</text>
+<polyline points="814,380 830,380" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="830" y="354" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="840" y="368" width="30" height="22" rx="4" fill="#fff" stroke="#c53030"/>
+<text x="855" y="384" font-size="12" fill="#c53030" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F7</text>
+<text x="880" y="377" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Sección crítica (mutex / semáforo)</text>
+<text x="880" y="396" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Resultado correcto</text>
+<polyline points="814,444 830,444" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="830" y="418" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="840" y="432" width="30" height="22" rx="4" fill="#fff" stroke="#c53030"/>
+<text x="855" y="448" font-size="12" fill="#c53030" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F8</text>
+<text x="880" y="441" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Interbloqueo</text>
+<text x="880" y="460" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Grafo de espera circular</text>
+<polyline points="814,508 830,508" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="830" y="482" width="330" height="52" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<rect x="840" y="496" width="30" height="22" rx="4" fill="#fff" stroke="#c53030"/>
+<text x="855" y="512" font-size="12" fill="#c53030" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">F9</text>
+<text x="880" y="505" font-size="13" fill="#1f2430" font-weight="bold" text-anchor="start">Inanición</text>
+<text x="880" y="524" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start" font-family="Consolas, Menlo, monospace">→ Tiempo de espera por hilo</text>
+<polyline points="814,261 814,508" fill="none" stroke="#8a93a6" stroke-width="1.6"/>
+<rect x="40" y="572" width="1120" height="118" rx="10" fill="#e8f6ee" stroke="#1f9d55" stroke-width="1.5"/>
+<text x="60" y="600" font-size="12.5" fill="#1f9d55" font-weight="bold" text-anchor="start">COMPONENTES TRANSVERSALES · presentes en todos los escenarios</text>
+<rect x="60" y="614" width="260" height="62" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<text x="74" y="636" font-size="13.5" fill="#1f2430" font-weight="bold" text-anchor="start">Controles</text>
+<text x="74" y="654" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">iniciar · pausar · paso a paso</text>
+<text x="74" y="669" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">velocidad · reiniciar</text>
+<rect x="335" y="614" width="260" height="62" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<text x="349" y="636" font-size="13.5" fill="#1f2430" font-weight="bold" text-anchor="start">Bitácora de eventos</text>
+<text x="349" y="654" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">en pantalla y exportable</text>
+<text x="349" y="669" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">a archivo .txt</text>
+<rect x="610" y="614" width="260" height="62" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<text x="624" y="636" font-size="13.5" fill="#1f2430" font-weight="bold" text-anchor="start">Explicación teórica</text>
+<text x="624" y="654" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">concepto de Sistemas Operativos</text>
+<text x="624" y="669" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">de cada escenario</text>
+<rect x="885" y="614" width="260" height="62" rx="6" fill="#f3f4f7" stroke="#4a5568" stroke-width="1"/>
+<text x="899" y="636" font-size="13.5" fill="#1f2430" font-weight="bold" text-anchor="start">Base de datos SQLite</text>
+<text x="899" y="654" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">procsim.db: escenarios,</text>
+<text x="899" y="669" font-size="11.5" fill="#5b6475" font-weight="normal" text-anchor="start">ejecuciones y eventos</text>
+</svg>
