@@ -42,7 +42,7 @@ El simulador ofrece **9 funciones** organizadas en 3 módulos. En cada una, el u
 **Módulo A — Gestión de procesos:** cómo nace, vive y termina un proceso.
 
 | # | Función | Descripción | Resultado en pantalla |
-|---|---|---|---|---|
+|---|---|---|---|
 | F1 | Crear y finalizar procesos | Crear procesos con nombre, prioridad y tiempo de ráfaga; listarlos y terminarlos. | Lista de procesos activos |
 | F2 | Consultar el PCB | Ver el bloque de control de cada proceso: PID, estado, contador de programa, prioridad y registros. | Ficha PCB actualizada en vivo |
 | F3 | Ciclo de vida | Animar las transiciones entre nuevo, listo, ejecución, bloqueado y terminado. | Diagrama de estados animado |
@@ -50,14 +50,14 @@ El simulador ofrece **9 funciones** organizadas en 3 módulos. En cada una, el u
 **Módulo B — Hilos y modos de ejecución:** qué comparte un proceso con sus hilos y cuándo se entra al kernel.
 
 | # | Función | Descripción | Resultado en pantalla |
-|---|---|---|---|---|
+|---|---|---|---|
 | F4 | Hilos de un proceso | Crear varios hilos dentro de un proceso y compararlos con procesos independientes: memoria compartida frente a pila y registros propios. | Línea de tiempo por hilo |
 | F5 | Modo usuario ↔ modo kernel | Simular una llamada al sistema (por ejemplo, `read()`) y una interrupción de E/S, mostrando el cambio de modo y el regreso. | Secuencia de pasos explicada |
 
 **Módulo C — Concurrencia:** qué falla cuando varios hilos comparten recursos y cómo se corrige.
 
 | # | Función | Descripción | Resultado en pantalla |
-|---|---|---|---|---|
+|---|---|---|---|
 | F6 | Condición de carrera | Dos hilos incrementan un contador compartido sin protección. | Valor esperado vs. valor real |
 | F7 | Sección crítica | Repetir el caso anterior usando mutex o semáforo. | Resultado correcto y comparación |
 | F8 | Interbloqueo | Dos hilos retienen un recurso cada uno y esperan el del otro. | Grafo de espera circular |
