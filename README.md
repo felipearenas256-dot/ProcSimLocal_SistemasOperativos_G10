@@ -1,10 +1,10 @@
-# ProcSim Local — Sistemas Operativos — Grupo 14
+# ProcSim Local — Sistemas Operativos — Grupo 10
 
 Simulador de escritorio de procesos, hilos y concurrencia para Windows.
 
 | Asignatura | Grupo | Programa | Universidad | Fecha |
 |---|---|---|---|---|
-| Sistemas Operativos | 14 | Ingeniería de Software | Manuela Beltrán | Octubre 2026 |
+| Sistemas Operativos | 10 | Ingeniería de Software | Manuela Beltrán | Octubre 2026 |
 
 ## 1. Levantamiento de información
 
@@ -126,7 +126,7 @@ _Pendiente_
 
 ## Estructura de carpetas
 ```
-ProcSimLocal_SistemasOperativos_G14/
+ProcSimLocal_SistemasOperativos_G10/
 ├── main.py              # punto de entrada
 ├── controlador.py       # coordina vista y modelo
 ├── ui/                  # VISTA (Tkinter)
