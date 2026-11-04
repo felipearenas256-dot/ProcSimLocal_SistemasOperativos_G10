@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Modelo de estados de un proceso</title>
+<defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a93a6"/></marker></defs>
+<rect width="1000" height="340" fill="#ffffff"/>
+<text x="40" y="42" font-size="22" fill="#1f2430" font-weight="bold" text-anchor="start">Modelo de estados de un proceso</text>
+<text x="40" y="66" font-size="13" fill="#5b6475" font-weight="normal" text-anchor="start">Transiciones que anima la función F3</text>
+<rect x="35" y="115" width="150" height="50" rx="25" fill="#e8effd" stroke="#2563eb" stroke-width="2"/>
+<text x="110" y="145" font-size="15" fill="#2563eb" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">nuevo</text>
+<rect x="265" y="115" width="150" height="50" rx="25" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="340" y="145" font-size="15" fill="#1f9d55" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">listo</text>
+<rect x="535" y="115" width="150" height="50" rx="25" fill="#fdf4e3" stroke="#b7791f" stroke-width="2"/>
+<text x="610" y="145" font-size="15" fill="#b7791f" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">ejecución</text>
+<rect x="805" y="115" width="150" height="50" rx="25" fill="#fdecec" stroke="#c53030" stroke-width="2"/>
+<text x="880" y="145" font-size="15" fill="#c53030" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">terminado</text>
+<rect x="535" y="260" width="150" height="50" rx="25" fill="#f1eafd" stroke="#7c3aed" stroke-width="2"/>
+<text x="610" y="290" font-size="15" fill="#7c3aed" font-weight="bold" text-anchor="middle" font-family="Consolas, Menlo, monospace">bloqueado</text>
+<polyline points="185,140 263,140" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="224" y="128" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="middle">admitir</text>
+<polyline points="415,131 533,131" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="474" y="120" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="middle">despachar</text>
+<polyline points="535,150 417,150" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="474" y="170" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="middle">interrupción</text>
+<polyline points="685,140 803,140" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="744" y="128" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="middle">salir</text>
+<polyline points="610,165 610,258" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="622" y="216" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">espera E/S</text>
+<polyline points="535,285 340,285 340,167" fill="none" stroke="#8a93a6" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="352" y="276" font-size="12" fill="#5b6475" font-weight="normal" text-anchor="start">E/S lista</text>
+</svg>
