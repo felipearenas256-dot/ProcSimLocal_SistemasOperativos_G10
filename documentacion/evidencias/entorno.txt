@@ -1,0 +1,13 @@
+ProcSim Local · verificación del entorno
+------------------------------------------------------------
+Sistema operativo         Windows 11 (build 10.0.26200)
+Arquitectura              AMD64
+Procesadores lógicos      12
+Python                    3.12.10
+Intérprete                CPython
+Tkinter (Tk)              8.6
+SQLite                    3.49.1
+Hilos nativos de prueba   3 TID distintos: 3040, 14588, 21000
+PID de este proceso       15264
+------------------------------------------------------------
+Entorno correcto: se puede ejecutar  python src/main.py
