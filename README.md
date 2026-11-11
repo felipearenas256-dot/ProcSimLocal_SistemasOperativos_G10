@@ -6,7 +6,9 @@
 |---|---|---|---|---|
 | Sistemas Operativos | 10 | Ingeniería de Software | Universidad Manuela Beltrán | 2026 |
 
-> **Estado:** Fase 1 · Planeación y estructura técnica (documentación, diagramas, modelo de datos y estructura del repositorio).
+> **Estado:** Fase II completada · prototipo funcional con las 9 funciones, base de datos SQLite y 42 pruebas automáticas. Ver [avance de la Fase II](documentacion/fase2_avance.md).
+
+![ProcSim Local · condición de carrera y sección crítica](recursos/imagenes/fase2/07_F7_seccion_critica_mutex.png)
 
 ---
 
@@ -141,15 +143,18 @@ ProcSimLocal_SistemasOperativos_G10/
 ├── README.md                  # este documento
 ├── LICENSE                    # licencia MIT
 ├── documentacion/             # documentación técnica (.md y .pdf)
+│   ├── fase2_avance.md        # avance de la Fase II
+│   ├── evidencias/            # entorno, pruebas, bitácoras y consulta a la BD
 │   └── diagramas/             # diagramas (.svg y .png)
 ├── src/                       # código fuente
 │   ├── main.py                # punto de entrada
+│   ├── entorno.py             # verificación del entorno
 │   ├── controlador.py         # CONTROLADOR
-│   ├── ui/                    # VISTA (Tkinter)
-│   ├── nucleo/                # MODELO (motor de simulación)
+│   ├── ui/                    # VISTA: ventana_principal, panel_procesos, panel_concurrencia, tema
+│   ├── nucleo/                # MODELO: pcb, proceso, hilos, sincronizacion, escenarios, registro, base_datos
 │   └── bd/esquema.sql         # modelo relacional (SQLite)
-├── recursos/imagenes/         # capturas e íconos
-└── pruebas/                   # casos de prueba (unittest)
+├── recursos/imagenes/fase2/   # capturas de la aplicación
+└── pruebas/                   # 42 pruebas (unittest)
 ```
 
 ## 8. Tecnologías
@@ -178,21 +183,32 @@ ProcSimLocal_SistemasOperativos_G10/
 | Software | Python 3.12 (desde el código) o ninguno (con el `.exe`) |
 | Internet | No requerido |
 
-### Ejecutar desde el código *(disponible cuando se implemente la Fase 2)*
+### Ejecutar desde el código
 
 ```bash
 git clone https://github.com/felipearenas256-dot/ProcSimLocal_SistemasOperativos_G10.git
 cd ProcSimLocal_SistemasOperativos_G10
-python src/main.py
+python src/entorno.py                       # verifica Windows, Python, Tkinter, SQLite e hilos nativos
+python src/main.py                          # abre el simulador
+python -m unittest discover -s pruebas -v   # ejecuta las 42 pruebas
 ```
 
-No requiere instalar paquetes adicionales: Tkinter, `threading` y `sqlite3` vienen con Python.
+No requiere instalar paquetes adicionales: Tkinter, `threading`, `sqlite3` y `unittest` vienen con Python. La base de datos `procsim.db` se crea sola la primera vez.
+
+### Uso
+
+1. Elija un escenario en el menú de la izquierda (F1 a F9).
+2. Ajuste los parámetros (se validan al iniciar).
+3. Use **Iniciar**, **Pausar / Reanudar**, **Paso** (avanza un evento) y **Velocidad**.
+4. Compare el resultado **esperado** con el **real** y revise la **bitácora**.
+5. Exporte la bitácora a `.txt` o abra el **Historial de ejecuciones** guardado en SQLite.
 
 ## 10. Documentación técnica
 
 | Documento | Markdown | PDF |
 |---|---|---|
-| Documento técnico consolidado | — | [documento_tecnico.pdf](documentacion/documento_tecnico.pdf) |
+| **Avance de la Fase II** (entorno, componentes, pruebas y evidencias) | [ver](documentacion/fase2_avance.md) | — |
+| Documento técnico consolidado (Fase I) | — | [documento_tecnico.pdf](documentacion/documento_tecnico.pdf) |
 | Descripción y formulación del proyecto | [ver](documentacion/descripcion_proyecto.md) | [PDF](documentacion/descripcion_proyecto.pdf) |
 | Requerimientos funcionales y no funcionales | [ver](documentacion/requerimientos.md) | [PDF](documentacion/requerimientos.pdf) |
 | Estructura del producto y arquitectura inicial | [ver](documentacion/arquitectura_inicial.md) | [PDF](documentacion/arquitectura_inicial.pdf) |
@@ -200,6 +216,7 @@ No requiere instalar paquetes adicionales: Tkinter, `threading` y `sqlite3` vien
 | Referencias bibliográficas | [ver](documentacion/referencias.md) | [PDF](documentacion/referencias.pdf) |
 | Diagramas | [carpeta](documentacion/diagramas/) | — |
 | Esquema de la base de datos | [esquema.sql](src/bd/esquema.sql) | — |
+| Evidencias de la Fase II | [carpeta](documentacion/evidencias/) · [capturas](recursos/imagenes/fase2/) | — |
 
 ## 11. Integrantes del equipo
 
@@ -213,11 +230,24 @@ No requiere instalar paquetes adicionales: Tkinter, `threading` y `sqlite3` vien
 
 | Fase | Contenido | Estado |
 |---|---|---|
-| **1. Planeación y estructura** | Documentación, requerimientos, diagramas, modelo relacional, estructura de carpetas y repositorio. | ✅ Completada |
-| **2. Motor de simulación** | `nucleo/`: proceso, PCB, estados, hilos, sincronización, registro de eventos y base de datos. | ⏳ Siguiente |
-| **3. Interfaz gráfica** | `ui/` y `controlador.py`: ventana principal, paneles, animaciones y controles. | Pendiente |
-| **4. Escenarios de concurrencia** | F6 a F9 con hilos reales, grafo de espera y tiempos de espera. | Pendiente |
-| **5. Pruebas y entrega** | Casos de prueba, capturas, manual de usuario y ejecutable `.exe`. | Pendiente |
+| **I. Planeación y estructura** | Documentación, requerimientos, diagramas, modelo relacional, estructura de carpetas y repositorio. | ✅ Completada |
+| **II. Implementación** | Motor de simulación, base de datos SQLite, controlador, interfaz Tkinter con las 9 funciones, 42 pruebas automáticas y evidencias. | ✅ Completada |
+| **III. Entrega final** | Ejecutable `.exe` (PyInstaller), manual de usuario, análisis de resultados y mejoras según retroalimentación. | ⏳ Siguiente |
+
+### Fase II · qué se implementó
+
+- **Motor de simulación** (`src/nucleo/`): PCB, modelo de 5 estados con validación de transiciones, planificador por prioridad con quantum y expropiación, hilos reales con TID nativo de Windows, mutex, semáforos, grafo de espera con detección de ciclos y recurso con prioridad y envejecimiento.
+- **Base de datos SQLite**: cada ejecución guarda sus procesos, hilos, recursos, asignaciones y eventos; se consulta desde *Historial de ejecuciones*.
+- **Interfaz**: diagrama de estados animado, ficha PCB en vivo, línea de tiempo de hilos, carriles usuario/kernel, contador compartido, grafo de interbloqueo con las condiciones de Coffman y tiempos de espera por hilo.
+- **Pruebas**: 42 pruebas unitarias y de integración (`python -m unittest discover -s pruebas -v`), todas correctas.
+
+| | |
+|---|---|
+| ![F1](recursos/imagenes/fase2/01_F1_crear_procesos.png) F1–F3 · procesos, estados y PCB | ![F4](recursos/imagenes/fase2/04_F4_hilos.png) F4 · hilos con memoria compartida |
+| ![F6](recursos/imagenes/fase2/06_F6_condicion_carrera.png) F6 · condición de carrera | ![F8](recursos/imagenes/fase2/08_F8_interbloqueo.png) F8 · interbloqueo |
+| ![F5](recursos/imagenes/fase2/05_F5_modo_kernel.png) F5 · modo usuario ↔ kernel | ![F9](recursos/imagenes/fase2/10_F9_inanicion.png) F9 · inanición |
+
+Detalle completo, pruebas y evidencias: [documentacion/fase2_avance.md](documentacion/fase2_avance.md).
 
 ## Licencia
 
