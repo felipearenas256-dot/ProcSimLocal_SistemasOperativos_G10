@@ -75,7 +75,8 @@ class PruebasInterbloqueo(unittest.TestCase):
     def test_sin_prevencion_hay_interbloqueo(self):
         r = correr(EscenarioInterbloqueo, estrategia="sin prevención", limite=1)
         self.assertTrue(r.datos["interbloqueo"])
-        self.assertEqual(r.datos["completados"], [])
+        self.assertTrue(r.correcto)
+        self.assertIn("Interbloqueo detectado", r.real)
 
     def test_orden_global_lo_previene(self):
         r = correr(EscenarioInterbloqueo, estrategia="orden global de recursos", limite=1)

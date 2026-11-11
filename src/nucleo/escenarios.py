@@ -597,8 +597,9 @@ class EscenarioInterbloqueo(Escenario):
         return Resultado(
             esperado=("Interbloqueo: espera circular H1 → R2 → H2 → R1 → H1" if not orden
                       else "Sin interbloqueo: ambos hilos terminan"),
-            real=("Interbloqueo detectado; ningún hilo pudo terminar" if hubo and not self.completados else
-                  f"Sin interbloqueo · terminaron: {', '.join(self.completados) or 'ninguno'}"),
+            real=(("Interbloqueo detectado (espera circular); se rompió por tiempo de espera"
+                   + (f" y después terminó {', '.join(self.completados)}" if self.completados else ""))
+                  if hubo else f"Sin interbloqueo · terminaron: {', '.join(self.completados) or 'ninguno'}"),
             resumen=("Cada hilo retenía un recurso y esperaba el del otro. Se rompió el bloqueo por tiempo de espera "
                      "(los hilos liberaron sus recursos)." if hubo else
                      "Pidiendo R1 antes que R2 nadie retiene R2 mientras espera R1: no hay espera circular."),
