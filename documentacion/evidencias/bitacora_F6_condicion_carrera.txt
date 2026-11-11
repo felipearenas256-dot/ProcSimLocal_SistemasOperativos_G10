@@ -1,0 +1,35 @@
+ProcSim Local · bitácora de eventos
+Exportado: 2026-11-11 10:34:43
+Escenario: F6 · Condición de carrera · ejecución #1
+Esperado: contador = 10
+Real: contador = 5
+------------------------------------------------------------------------
+[0000] inicio    -      F6 · Condición de carrera · parámetros: hilos=2, incrementos=5
+[0000] thread    H1     inicia · TID nativo de Windows 16468  (NUEVO → EJECUCION)
+[0000] read      H1     lee contador = 0
+[0001] thread    H2     inicia · TID nativo de Windows 18912  (NUEVO → EJECUCION)
+[0001] read      H2     lee contador = 0
+[0002] write     H1     escribe contador = 1
+[0002] read      H1     lee contador = 1
+[0003] write     H2     escribe contador = 1
+[0003] read      H2     lee contador = 1
+[0004] write     H2     escribe contador = 2
+[0004] read      H2     lee contador = 2
+[0005] write     H1     escribe contador = 2
+[0005] read      H1     lee contador = 2
+[0006] write     H1     escribe contador = 3
+[0006] read      H1     lee contador = 3
+[0007] write     H2     escribe contador = 3
+[0007] read      H2     lee contador = 3
+[0008] write     H2     escribe contador = 4
+[0008] read      H2     lee contador = 4
+[0009] write     H1     escribe contador = 4
+[0009] read      H1     lee contador = 4
+[0010] write     H1     escribe contador = 5
+[0010] thread    H1     termina  (EJECUCION → TERMINADO)
+[0010] write     H2     escribe contador = 5
+[0010] thread    H2     termina  (EJECUCION → TERMINADO)
+[0010] carrera   -      Sin protección: esperado 10 · real 5 · perdidas 5
+[0010] fin       -      esperado: contador = 10 · real: contador = 5
+------------------------------------------------------------------------
+Total de eventos: 27

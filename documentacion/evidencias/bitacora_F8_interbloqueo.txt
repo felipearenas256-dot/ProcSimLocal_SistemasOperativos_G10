@@ -1,0 +1,23 @@
+ProcSim Local · bitácora de eventos
+Exportado: 2026-11-11 10:34:44
+Escenario: F8 · Interbloqueo · ejecución #2
+Esperado: Interbloqueo: espera circular H1 → R2 → H2 → R1 → H1
+Real: Interbloqueo detectado (espera circular); se rompió por tiempo de espera
+------------------------------------------------------------------------
+[0000] inicio    -      F8 · Interbloqueo · parámetros: estrategia=sin prevención, limite=1.0
+[0000] thread    H1     inicia · TID nativo de Windows 10540  (NUEVO → EJECUCION)
+[0000] lock      H1     obtiene R1
+[0001] thread    H2     inicia · TID nativo de Windows 7688  (NUEVO → EJECUCION)
+[0001] lock      H2     obtiene R2
+[0002] wait      H1     pide R2, pero lo tiene otro hilo: queda esperando  (EJECUCION → BLOQUEADO)
+[0002] wait      H2     pide R1, pero lo tiene otro hilo: queda esperando  (EJECUCION → BLOQUEADO)
+[0002] deadlock  -      INTERBLOQUEO detectado · espera circular: H1 → R2 → H2 → R1 → H1
+[0002] timeout   H2     se cansa de esperar R1 y libera lo que tiene
+[0002] unlock    H2     libera R2
+[0002] thread    H2     termina  (EJECUCION → TERMINADO)
+[0002] timeout   H1     se cansa de esperar R2 y libera lo que tiene
+[0002] unlock    H1     libera R1
+[0002] thread    H1     termina  (EJECUCION → TERMINADO)
+[0002] fin       -      esperado: Interbloqueo: espera circular H1 → R2 → H2 → R1 → H1 · real: Interbloqueo detectado (espera circular); se rompió por tiempo de espera
+------------------------------------------------------------------------
+Total de eventos: 15

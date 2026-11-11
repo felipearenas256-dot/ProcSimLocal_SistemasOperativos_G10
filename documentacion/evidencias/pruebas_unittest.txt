@@ -1,0 +1,50 @@
+ProcSim Local · resultado de las pruebas (python -m unittest discover -s pruebas -v)
+Fecha: 2026-11-11 10:34 · Windows 11 · Python 3.12.10
+
+test_esquema_y_escenarios (test_base_datos_controlador.PruebasBaseDatos.test_esquema_y_escenarios) ... ok
+test_llaves_foraneas (test_base_datos_controlador.PruebasBaseDatos.test_llaves_foraneas) ... ok
+test_crear_proceso_en_vivo (test_base_datos_controlador.PruebasControlador.test_crear_proceso_en_vivo) ... ok
+test_ejecucion_completa_se_guarda (test_base_datos_controlador.PruebasControlador.test_ejecucion_completa_se_guarda) ... ok
+test_exportar_bitacora (test_base_datos_controlador.PruebasControlador.test_exportar_bitacora) ... ok
+test_no_inicia_dos_veces (test_base_datos_controlador.PruebasControlador.test_no_inicia_dos_veces) ... ok
+test_procesos_se_guardan (test_base_datos_controlador.PruebasControlador.test_procesos_se_guardan) ... ok
+test_reiniciar_cancela_y_guarda (test_base_datos_controlador.PruebasControlador.test_reiniciar_cancela_y_guarda) ... ok
+test_validacion (test_base_datos_controlador.PruebasControlador.test_validacion) ... ok
+test_crear_mecanismo (test_concurrencia.PruebasCarrera.test_crear_mecanismo) ... ok
+test_mutex_da_resultado_correcto (test_concurrencia.PruebasCarrera.test_mutex_da_resultado_correcto) ... ok
+test_semaforo_binario_correcto (test_concurrencia.PruebasCarrera.test_semaforo_binario_correcto) ... ok
+test_semaforo_con_dos_permisos_no_protege (test_concurrencia.PruebasCarrera.test_semaforo_con_dos_permisos_no_protege) ... ok
+test_sin_proteccion_pierde_actualizaciones (test_concurrencia.PruebasCarrera.test_sin_proteccion_pierde_actualizaciones) ... ok
+test_detener_lanza_excepcion (test_concurrencia.PruebasControl.test_detener_lanza_excepcion) ... ok
+test_paso_a_paso (test_concurrencia.PruebasControl.test_paso_a_paso) ... ok
+test_velocidad_limitada (test_concurrencia.PruebasControl.test_velocidad_limitada) ... ok
+test_detecta_espera_circular (test_concurrencia.PruebasGrafoEspera.test_detecta_espera_circular) ... ok
+test_sin_ciclo_al_liberar (test_concurrencia.PruebasGrafoEspera.test_sin_ciclo_al_liberar) ... ok
+test_baja_prioridad_sufre_inanicion (test_concurrencia.PruebasInanicion.test_baja_prioridad_sufre_inanicion) ... ok
+test_envejecimiento_la_corrige (test_concurrencia.PruebasInanicion.test_envejecimiento_la_corrige) ... ok
+test_recurso_elige_mejor_prioridad (test_concurrencia.PruebasInanicion.test_recurso_elige_mejor_prioridad) ... ok
+test_orden_global_lo_previene (test_concurrencia.PruebasInterbloqueo.test_orden_global_lo_previene) ... ok
+test_sin_prevencion_hay_interbloqueo (test_concurrencia.PruebasInterbloqueo.test_sin_prevencion_hay_interbloqueo) ... ok
+test_hilos_nativos_distintos_y_pila_propia (test_hilos_modos.PruebasHilos.test_hilos_nativos_distintos_y_pila_propia) ... ok
+test_linea_de_tiempo (test_hilos_modos.PruebasHilos.test_linea_de_tiempo) ... ok
+test_memoria_compartida_vs_propia (test_hilos_modos.PruebasHilos.test_memoria_compartida_vs_propia) ... ok
+test_caso_invalido (test_hilos_modos.PruebasModos.test_caso_invalido) ... ok
+test_interrupcion (test_hilos_modos.PruebasModos.test_interrupcion) ... ok
+test_read_cambia_dos_veces_de_modo (test_hilos_modos.PruebasModos.test_read_cambia_dos_veces_de_modo) ... ok
+test_finalizar_por_usuario (test_procesos.PruebasEstados.test_finalizar_por_usuario) ... ok
+test_transicion_invalida (test_procesos.PruebasEstados.test_transicion_invalida) ... ok
+test_transiciones_validas (test_procesos.PruebasEstados.test_transiciones_validas) ... ok
+test_instruccion_avanza_pc_y_registros (test_procesos.PruebasPCB.test_instruccion_avanza_pc_y_registros) ... ok
+test_pcb_inicial (test_procesos.PruebasPCB.test_pcb_inicial) ... ok
+test_crear_asigna_pid_y_valida (test_procesos.PruebasPlanificador.test_crear_asigna_pid_y_valida) ... ok
+test_finalizar_proceso (test_procesos.PruebasPlanificador.test_finalizar_proceso) ... ok
+test_misma_semilla_misma_simulacion (test_procesos.PruebasPlanificador.test_misma_semilla_misma_simulacion) ... ok
+test_prioridad_expropia (test_procesos.PruebasPlanificador.test_prioridad_expropia) ... ok
+test_quantum_turna_iguales (test_procesos.PruebasPlanificador.test_quantum_turna_iguales) ... ok
+test_solo_uno_en_cpu (test_procesos.PruebasPlanificador.test_solo_uno_en_cpu) ... ok
+test_todos_terminan (test_procesos.PruebasPlanificador.test_todos_terminan) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 9.995s
+
+OK

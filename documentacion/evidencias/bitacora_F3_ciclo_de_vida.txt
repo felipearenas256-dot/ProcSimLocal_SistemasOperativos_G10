@@ -1,0 +1,51 @@
+ProcSim Local · bitácora de eventos
+Exportado: 2026-11-11 10:34:45
+Escenario: F3 · Ciclo de vida · ejecución #3
+Esperado: 4 procesos terminados
+Real: 4 terminados en 31 tics
+------------------------------------------------------------------------
+[0000] fork      P100   P1 creado · prioridad 3 · ráfaga 4  (- → NUEVO)
+[0000] fork      P101   P2 creado · prioridad 4 · ráfaga 8  (- → NUEVO)
+[0000] fork      P102   P3 creado · prioridad 1 · ráfaga 3  (- → NUEVO)
+[0000] fork      P103   P4 creado · prioridad 1 · ráfaga 5  (- → NUEVO)
+[0000] inicio    -      F3 · Ciclo de vida · parámetros: procesos=4, quantum=2, prob_es=20, semilla=7
+[0001] admit     P100   admitir  (NUEVO → LISTO)
+[0001] admit     P101   admitir  (NUEVO → LISTO)
+[0001] admit     P102   admitir  (NUEVO → LISTO)
+[0001] admit     P103   admitir  (NUEVO → LISTO)
+[0001] exec      P102   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0003] wait      P102   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0003] exec      P103   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0005] wait      P103   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0005] exec      P100   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0006] irq       P102   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0006] preempt   P100   interrupción · llegó P102 con mayor prioridad  (EJECUCION → LISTO)
+[0006] exec      P102   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0007] exit      P102   salir · usó 3 tics de CPU  (EJECUCION → TERMINADO)
+[0007] exec      P100   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0008] irq       P103   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0008] preempt   P100   interrupción · llegó P103 con mayor prioridad  (EJECUCION → LISTO)
+[0008] exec      P103   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0009] wait      P103   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0009] exec      P100   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0011] exit      P100   salir · usó 4 tics de CPU  (EJECUCION → TERMINADO)
+[0011] exec      P101   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0012] irq       P103   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0012] wait      P101   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0012] exec      P103   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0014] exit      P103   salir · usó 5 tics de CPU  (EJECUCION → TERMINADO)
+[0015] irq       P101   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0015] exec      P101   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0016] wait      P101   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0019] irq       P101   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0019] exec      P101   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0020] wait      P101   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0023] irq       P101   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0023] exec      P101   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0026] wait      P101   espera E/S · pide E/S por 3 tics  (EJECUCION → BLOQUEADO)
+[0029] irq       P101   E/S lista · el dispositivo terminó  (BLOQUEADO → LISTO)
+[0029] exec      P101   despachar · cambio de contexto: se carga su PCB  (LISTO → EJECUCION)
+[0031] exit      P101   salir · usó 8 tics de CPU  (EJECUCION → TERMINADO)
+[0031] fin       -      esperado: 4 procesos terminados · real: 4 terminados en 31 tics
+------------------------------------------------------------------------
+Total de eventos: 43

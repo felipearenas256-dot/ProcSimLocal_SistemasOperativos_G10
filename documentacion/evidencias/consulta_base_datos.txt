@@ -1,0 +1,30 @@
+ProcSim Local · consulta a la base de datos SQLite (procsim.db) después de ejecutar los 9 escenarios
+
+Registros por tabla:
+  escenario   9
+  ejecucion   12
+  proceso     33
+  hilo        22
+  recurso     9
+  asignacion  9
+  evento      710
+
+SELECT x.id_ejecucion, e.codigo, e.nombre, x.mecanismo, x.estado, x.resultado_real FROM ejecucion x JOIN escenario e ...
+  1 | F1 | Crear y finalizar procesos | ninguno | finalizada | 6 terminados en 43 tics
+  2 | F2 | Consultar el PCB | ninguno | finalizada | 5 terminados en 31 tics
+  3 | F3 | Ciclo de vida | ninguno | finalizada | 6 terminados en 37 tics
+  4 | F4 | Hilos de un proceso | ninguno | finalizada | Compartida: 15 datos · independientes: 5, 5, 5
+  5 | F5 | Modo usuario y modo kernel | ninguno | finalizada | 2 cambios de modo · 8 de 12 pasos en modo kernel
+  6 | F6 | Condición de carrera | ninguno | finalizada | contador = 20
+  7 | F7 | Sección crítica | mutex | finalizada | sin protección = 15 · con mutex = 45
+  8 | F8 | Interbloqueo | mutex | finalizada | Interbloqueo detectado; ningún hilo pudo terminar
+  9 | F8 | Interbloqueo | mutex | finalizada | Sin interbloqueo · terminaron: H1, H2
+  10 | F9 | Inanición | ninguno | finalizada | B1: 0 acceso(s) · esperó 2.8 s · A1: 5, A2: 5
+  11 | F9 | Inanición | ninguno | finalizada | B1: 1 acceso(s) · esperó 1.4 s · A1: 6, A2: 5
+  12 | F3 | Ciclo de vida | ninguno | finalizada | 6 terminados en 37 tics
+
+Asignaciones del interbloqueo (tabla asignacion, ejecución F8 sin prevención):
+  hilo H1 retiene R1 (t=0)
+  hilo H2 retiene R2 (t=1)
+  hilo H2 espera R1 (t=2)
+  hilo H1 espera R2 (t=2)
