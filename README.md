@@ -10,6 +10,8 @@
 >
 > 📄 [Documento de entrega final](documentacion/fase3_entrega_final.md) · 📘 [Manual de usuario](documentacion/manual_usuario.md) · ⬇️ [Descargar ProcSimLocal.exe](https://github.com/felipearenas256-dot/ProcSimLocal_SistemasOperativos_G10/releases/latest)
 
+> 🟢 **¿Buscas la versión corta?** [`version_simple/`](version_simple/) tiene **ProcSim Simple**: 4 demostraciones (procesos con Round Robin, condición de carrera con mutex, interbloqueo e inanición) en 3 archivos de Python. Se ejecuta con `python version_simple/app.py`.
+
 ![ProcSim Local · condición de carrera y sección crítica](recursos/imagenes/fase2/07_F7_seccion_critica_mutex.png)
 
 ---
