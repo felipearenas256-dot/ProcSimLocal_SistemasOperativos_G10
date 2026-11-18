@@ -6,7 +6,9 @@
 |---|---|---|---|---|
 | Sistemas Operativos | 10 | Ingeniería de Software | Universidad Manuela Beltrán | 2026 |
 
-> **Estado:** Fase II completada · prototipo funcional con las 9 funciones, base de datos SQLite y 42 pruebas automáticas. Ver [avance de la Fase II](documentacion/fase2_avance.md).
+> **Estado:** ✅ **Versión final (Fase III)** · las 9 funciones, base de datos SQLite, 42 pruebas automáticas, experimentos con análisis de resultados, manual de usuario y ejecutable `.exe` para Windows.
+>
+> 📄 [Documento de entrega final](documentacion/fase3_entrega_final.md) · 📘 [Manual de usuario](documentacion/manual_usuario.md) · ⬇️ [Descargar ProcSimLocal.exe](https://github.com/felipearenas256-dot/ProcSimLocal_SistemasOperativos_G10/releases/latest)
 
 ![ProcSim Local · condición de carrera y sección crítica](recursos/imagenes/fase2/07_F7_seccion_critica_mutex.png)
 
@@ -25,7 +27,7 @@
 9. [Requisitos iniciales de ejecución](#9-requisitos-iniciales-de-ejecución)
 10. [Documentación técnica](#10-documentación-técnica)
 11. [Integrantes del equipo](#11-integrantes-del-equipo)
-12. [Estado actual y próximos avances](#12-estado-actual-y-próximos-avances)
+12. [Estado final y resultados](#12-estado-final-y-resultados)
 
 ---
 
@@ -142,18 +144,22 @@ La aplicación sigue el patrón **Modelo-Vista-Controlador (MVC)**:
 ProcSimLocal_SistemasOperativos_G10/
 ├── README.md                  # este documento
 ├── LICENSE                    # licencia MIT
+├── empaquetar.bat             # genera dist/ProcSimLocal.exe con PyInstaller
 ├── documentacion/             # documentación técnica (.md y .pdf)
+│   ├── fase3_entrega_final.md # entrega final: solución, pruebas, resultados y conclusiones
+│   ├── manual_usuario.md      # manual de usuario
 │   ├── fase2_avance.md        # avance de la Fase II
-│   ├── evidencias/            # entorno, pruebas, bitácoras y consulta a la BD
+│   ├── evidencias/            # entorno, pruebas, bitácoras, consulta a la BD y experimentos
 │   └── diagramas/             # diagramas (.svg y .png)
 ├── src/                       # código fuente
 │   ├── main.py                # punto de entrada
 │   ├── entorno.py             # verificación del entorno
+│   ├── experimentos.py        # experimentos repetidos (resultados de la Fase III)
 │   ├── controlador.py         # CONTROLADOR
 │   ├── ui/                    # VISTA: ventana_principal, panel_procesos, panel_concurrencia, tema
 │   ├── nucleo/                # MODELO: pcb, proceso, hilos, sincronizacion, escenarios, registro, base_datos
 │   └── bd/esquema.sql         # modelo relacional (SQLite)
-├── recursos/imagenes/fase2/   # capturas de la aplicación
+├── recursos/imagenes/        # capturas de la aplicación (fase2/, fase3/)
 └── pruebas/                   # 42 pruebas (unittest)
 ```
 
@@ -183,6 +189,13 @@ ProcSimLocal_SistemasOperativos_G10/
 | Software | Python 3.12 (desde el código) o ninguno (con el `.exe`) |
 | Internet | No requerido |
 
+### Ejecutar con el `.exe` (sin instalar Python)
+
+1. Descargue `ProcSimLocal.exe` desde [Releases](https://github.com/felipearenas256-dot/ProcSimLocal_SistemasOperativos_G10/releases/latest).
+2. Haga doble clic. Si aparece Windows SmartScreen: **Más información → Ejecutar de todas formas** (el ejecutable no tiene firma digital comercial).
+
+La base de datos `procsim.db` se crea junto al `.exe`. Para generar el ejecutable usted mismo: `empaquetar.bat` (queda en `dist\ProcSimLocal.exe`).
+
 ### Ejecutar desde el código
 
 ```bash
@@ -191,6 +204,7 @@ cd ProcSimLocal_SistemasOperativos_G10
 python src/entorno.py                       # verifica Windows, Python, Tkinter, SQLite e hilos nativos
 python src/main.py                          # abre el simulador
 python -m unittest discover -s pruebas -v   # ejecuta las 42 pruebas
+python src/experimentos.py                  # repite cada escenario 10 veces y resume los resultados
 ```
 
 No requiere instalar paquetes adicionales: Tkinter, `threading`, `sqlite3` y `unittest` vienen con Python. La base de datos `procsim.db` se crea sola la primera vez.
@@ -203,11 +217,16 @@ No requiere instalar paquetes adicionales: Tkinter, `threading`, `sqlite3` y `un
 4. Compare el resultado **esperado** con el **real** y revise la **bitácora**.
 5. Exporte la bitácora a `.txt` o abra el **Historial de ejecuciones** guardado en SQLite.
 
+Guía completa de cada escenario: [manual de usuario](documentacion/manual_usuario.md).
+
 ## 10. Documentación técnica
 
 | Documento | Markdown | PDF |
 |---|---|---|
-| **Avance de la Fase II** (entorno, componentes, pruebas y evidencias) | [ver](documentacion/fase2_avance.md) | — |
+| **Entrega final · Fase III** (solución, entorno, pruebas, resultados y conclusiones) | [ver](documentacion/fase3_entrega_final.md) | [PDF](documentacion/fase3_entrega_final.pdf) |
+| **Manual de usuario** | [ver](documentacion/manual_usuario.md) | [PDF](documentacion/manual_usuario.pdf) |
+| Resultados de los experimentos | [ver](documentacion/evidencias/resultados_experimentos.md) | — |
+| Avance de la Fase II (entorno, componentes, pruebas y evidencias) | [ver](documentacion/fase2_avance.md) | [PDF](documentacion/fase2_avance.pdf) |
 | Documento técnico consolidado (Fase I) | — | [documento_tecnico.pdf](documentacion/documento_tecnico.pdf) |
 | Descripción y formulación del proyecto | [ver](documentacion/descripcion_proyecto.md) | [PDF](documentacion/descripcion_proyecto.pdf) |
 | Requerimientos funcionales y no funcionales | [ver](documentacion/requerimientos.md) | [PDF](documentacion/requerimientos.pdf) |
@@ -216,7 +235,7 @@ No requiere instalar paquetes adicionales: Tkinter, `threading`, `sqlite3` y `un
 | Referencias bibliográficas | [ver](documentacion/referencias.md) | [PDF](documentacion/referencias.pdf) |
 | Diagramas | [carpeta](documentacion/diagramas/) | — |
 | Esquema de la base de datos | [esquema.sql](src/bd/esquema.sql) | — |
-| Evidencias de la Fase II | [carpeta](documentacion/evidencias/) · [capturas](recursos/imagenes/fase2/) | — |
+| Evidencias | [carpeta](documentacion/evidencias/) · [capturas](recursos/imagenes/) | — |
 
 ## 11. Integrantes del equipo
 
@@ -226,13 +245,29 @@ No requiere instalar paquetes adicionales: Tkinter, `threading`, `sqlite3` y `un
 | _Nombre completo 2_ | _Por definir_ |
 | _Nombre completo 3_ | _Por definir_ |
 
-## 12. Estado actual y próximos avances
+## 12. Estado final y resultados
 
 | Fase | Contenido | Estado |
 |---|---|---|
 | **I. Planeación y estructura** | Documentación, requerimientos, diagramas, modelo relacional, estructura de carpetas y repositorio. | ✅ Completada |
 | **II. Implementación** | Motor de simulación, base de datos SQLite, controlador, interfaz Tkinter con las 9 funciones, 42 pruebas automáticas y evidencias. | ✅ Completada |
-| **III. Entrega final** | Ejecutable `.exe` (PyInstaller), manual de usuario, análisis de resultados y mejoras según retroalimentación. | ⏳ Siguiente |
+| **III. Entrega final** | Ejecutable `.exe`, manual de usuario, experimentos con análisis de resultados, corrección de la interfaz y documento final. | ✅ Completada |
+
+### Resultados obtenidos
+
+Cada escenario se repitió 10 veces con `python src/experimentos.py` ([resultados completos](documentacion/evidencias/resultados_experimentos.md)):
+
+| Escenario | Resultado |
+|---|---|
+| F1–F3 · Planificador | Con quantum 1 hay 20 cambios de contexto; con quantum 3 o más, 15. El trabajo total no cambia (34 tics). |
+| F4 · Hilos | La memoria compartida acumula hilos × iteraciones; cada proceso independiente solo ve sus datos. TID nativos distintos. |
+| F5 · Modos | 2 cambios de modo (usuario → kernel → usuario) en `read()` y en la interrupción. |
+| F6 · Carrera | Se pierden actualizaciones en 10 de 10 corridas: 50 % con 2 hilos, 75 % con 4 y 88 % con 8. |
+| F7 · Sección crítica | Mutex y semáforo binario: 10/10 correctas. Semáforo de 2 permisos: 0/10 (no da exclusión mutua). |
+| F8 · Interbloqueo | Sin prevención: 10/10 interbloqueos. Con orden global de recursos: 0/10. |
+| F9 · Inanición | Sin envejecimiento el hilo de baja prioridad obtiene el recurso 0 veces; con envejecimiento, siempre al menos 1. |
+
+Análisis, cumplimiento de objetivos y conclusiones: [documentacion/fase3_entrega_final.md](documentacion/fase3_entrega_final.md).
 
 ### Fase II · qué se implementó
 
