@@ -211,8 +211,9 @@ class PanelPlanificador(ttk.Frame):
                 c.create_text(x + bw - 14, y + bh - 2, text=f"+{len(lista) - por_fila * 2}", fill=borde,
                               font=T.FUENTE_P)
         if not procesos:
-            c.create_text(cen["listo"][0] + 90, 200, text="Inicie el escenario para ver los procesos moverse entre estados.",
-                          fill=T.SUAVE, font=T.FUENTE, anchor="w")
+            x0 = bx + bw + 24                                   # a la derecha de BLOQUEADO, sin taparlo
+            c.create_text(x0, by + 4, text="Inicie el escenario para ver los procesos moverse entre estados.",
+                          fill=T.SUAVE, font=T.FUENTE, anchor="w", width=max(160, c.winfo_width() - x0 - 16))
 
 
 # =============================================================================

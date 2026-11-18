@@ -8,13 +8,19 @@ conexiones entre hilos (sqlite3 no lo permite por defecto).
 from __future__ import annotations
 
 import sqlite3
+import sys
 from contextlib import contextmanager
 from pathlib import Path
 
 from nucleo.registro import Evento
 
-RAIZ = Path(__file__).resolve().parents[2]
-ESQUEMA = Path(__file__).resolve().parents[1] / "bd" / "esquema.sql"
+if getattr(sys, "frozen", False):
+    # Ejecutable de PyInstaller: el esquema viaja dentro del .exe y la BD queda junto al .exe.
+    RAIZ = Path(sys.executable).resolve().parent
+    ESQUEMA = Path(getattr(sys, "_MEIPASS", RAIZ)) / "bd" / "esquema.sql"
+else:
+    RAIZ = Path(__file__).resolve().parents[2]
+    ESQUEMA = Path(__file__).resolve().parents[1] / "bd" / "esquema.sql"
 RUTA_POR_DEFECTO = RAIZ / "procsim.db"
 
 ESTADOS_VALIDOS = {"nuevo", "listo", "ejecucion", "bloqueado", "terminado"}
