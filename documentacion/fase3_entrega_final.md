@@ -61,6 +61,7 @@ Los procesos de los escenarios F1 a F3 son **simulados** (el planificador avanza
 - `python src/entorno.py` comprueba el entorno y crea 3 hilos para verificar que reciben **TID nativos distintos** de Windows ([evidencia](evidencias/entorno.txt)).
 - `main.py` activa el modo *DPI aware* de Windows para que la ventana se vea nítida en pantallas con escala.
 - **Ejecutable:** `empaquetar.bat` instala PyInstaller y genera `dist\ProcSimLocal.exe`. El esquema SQL viaja dentro del ejecutable y la base de datos `procsim.db` se crea junto al `.exe`. Se probó en una carpeta limpia: la ventana abre y la base de datos se crea sola ([captura](../recursos/imagenes/fase3/01_ejecutable_windows.png)).
+- **Smart App Control:** en equipos con Windows 11 que tienen activo Smart App Control, Windows puede bloquear el `.exe` (*"Una directiva de Control de aplicaciones bloqueó este archivo"*) porque no tiene firma digital. Pasó en el equipo de desarrollo después de las primeras ejecuciones. En ese caso la aplicación se ejecuta desde el código con `python src/main.py`, con el mismo resultado.
 
 ## 4. Pruebas de funcionamiento
 
@@ -69,7 +70,7 @@ Los procesos de los escenarios F1 a F3 son **simulados** (el planificador avanza
 | Pruebas automáticas (unitarias y de integración) | `python -m unittest discover -s pruebas -v` | **42 de 42 correctas** ([salida](evidencias/pruebas_unittest.txt)) |
 | Pruebas funcionales en la interfaz | Cada escenario ejecutado desde la ventana | 11 casos, todos cumplen ([tabla en la Fase II](fase2_avance.md#52-pruebas-funcionales-en-la-interfaz)) |
 | Experimentos repetidos | `python src/experimentos.py -n 10` | 6 experimentos, 10 repeticiones por configuración (sección 5) |
-| Prueba del ejecutable | `ProcSimLocal.exe` en una carpeta nueva | Abre la ventana y crea `procsim.db` |
+| Prueba del ejecutable | `ProcSimLocal.exe` en una carpeta nueva | Abre la ventana y crea `procsim.db` (con Smart App Control activo puede bloquearse, ver sección 3) |
 
 Las pruebas automáticas cubren: PCB, transiciones válidas e inválidas, planificador (expropiación, quantum, determinismo con semilla), memoria compartida frente a memoria propia, TID nativos, cambios de modo, pérdida de actualizaciones sin protección, exactitud con mutex y semáforo binario, detección de ciclos en el grafo de espera, prevención por orden global, inanición y envejecimiento, controles de la simulación, base de datos (llaves foráneas y `CHECK`) y el controlador completo.
 
@@ -197,4 +198,4 @@ Los 20 requerimientos funcionales se trazan a las funciones en la [tabla de la F
 
 - Los procesos de F1 a F3 son simulados; el simulador no controla procesos reales del equipo (fuera del alcance definido).
 - Se podrían agregar otros algoritmos de planificación (FCFS, SJF, Round Robin puro) para compararlos, y escenarios clásicos como productor-consumidor o los filósofos comensales.
-- El ejecutable no tiene firma digital, por eso Windows SmartScreen muestra un aviso la primera vez.
+- El ejecutable no tiene firma digital: Windows SmartScreen muestra un aviso la primera vez y Smart App Control (Windows 11) puede bloquearlo. Firmarlo requiere un certificado de firma de código comercial.

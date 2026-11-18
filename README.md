@@ -193,6 +193,7 @@ ProcSimLocal_SistemasOperativos_G10/
 
 1. Descargue `ProcSimLocal.exe` desde [Releases](https://github.com/felipearenas256-dot/ProcSimLocal_SistemasOperativos_G10/releases/latest).
 2. Haga doble clic. Si aparece Windows SmartScreen: **Más información → Ejecutar de todas formas** (el ejecutable no tiene firma digital comercial).
+3. Si Windows 11 dice *"Una directiva de Control de aplicaciones bloqueó este archivo"*, el equipo tiene **Smart App Control** activo, que no permite programas sin firma: ejecute la aplicación desde el código (abajo).
 
 La base de datos `procsim.db` se crea junto al `.exe`. Para generar el ejecutable usted mismo: `empaquetar.bat` (queda en `dist\ProcSimLocal.exe`).
 

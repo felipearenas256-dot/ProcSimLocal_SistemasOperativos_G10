@@ -31,6 +31,7 @@ No necesita internet ni cuenta de usuario.
 2. Guárdelo en una carpeta propia, por ejemplo `Documentos\ProcSim`.
 3. Haga doble clic en `ProcSimLocal.exe`. La primera apertura tarda unos segundos.
 4. Si Windows muestra **"Windows protegió su PC"** (SmartScreen), haga clic en **Más información → Ejecutar de todas formas**. El aviso aparece porque el ejecutable no tiene firma digital comercial; no es un error.
+5. Si aparece **"Una directiva de Control de aplicaciones bloqueó este archivo"**, el equipo tiene activo **Smart App Control** de Windows 11, que bloquea los programas sin firma digital y no ofrece la opción de ejecutarlos de todas formas. En ese caso use la **opción 2** (desde el código fuente): el resultado es el mismo.
 
 La base de datos `procsim.db` se crea en la misma carpeta del `.exe`.
 
@@ -130,6 +131,7 @@ Los hilos de alta prioridad (A) piden el recurso una y otra vez; el hilo B1 tien
 | Situación | Solución |
 |---|---|
 | Windows SmartScreen bloquea el `.exe` | **Más información → Ejecutar de todas formas** (ver sección 3). |
+| "Una directiva de Control de aplicaciones bloqueó este archivo" | Smart App Control de Windows 11 bloquea programas sin firma. Ejecute la aplicación desde el código (sección 3, opción 2). |
 | "Parámetros no válidos" al iniciar | Ajuste el valor al rango que aparece debajo del campo. |
 | La simulación va muy rápido | Baje la **Velocidad** o use **Pausar** y **Paso**. |
 | F6 da un valor diferente cada vez | Es normal: depende de cómo Windows intercala los hilos reales. |
